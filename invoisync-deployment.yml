@@ -1,32 +1,32 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: revtracker
+  name: invoisync
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: revtracker
+      app: invoisync
   template:
     metadata:
       labels:
-        app: revtracker
+        app: invoisync
     spec:
       containers:
-        - name: revtracker
-          image: revtrackerregistry.azurecr.io/revtracker:v3
+        - name: invoisync
+          image: invoisyncregistry.azurecr.io/invoisync:v1
           imagePullPolicy: Always
           ports:
             - containerPort: 5000
           env:
             - name: DATABASE_HOST
-              value: "revtracker-server.postgres.database.azure.com"
+              value: "invoisync-server.postgres.database.azure.com"
             - name: DATABASE_USER
-              value: "earthyparrot8"
+              value: "weeklymagpie3"
             - name: DATABASE_PASSWORD
-              value: "lhHhtdAXWMHkOA0RPzknWA"
+              value: "5pdYL7gWd2T05MpLAO3_Ug"
             - name: DATABASE_NAME
-              value: "revtracker_db"
+              value: "invoisync"
       affinity:
         podAntiAffinity:
           requiredDuringSchedulingIgnoredDuringExecution:
@@ -35,17 +35,17 @@ spec:
                   - key: "app"
                     operator: In
                     values:
-                      - revtracker
+                      - invoisync
               topologyKey: "kubernetes.io/hostname"
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: revtracker-service
+  name: invoisync-service
 spec:
   type: LoadBalancer
   ports:
     - port: 80
       targetPort: 5000
   selector:
-    app: revtracker
+    app: invoisync
