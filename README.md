@@ -2,7 +2,9 @@
 
 _*CRITQUE AND FEEDBACK IS ALWAYS WELCOMED*_
 
-This application has been developed using Flask, backed by a Postgres database and utilizes SQLAlchemy for ORM. This application is designed for accountants to automate the revenue recognition process. In the world of accounting, revenue must be recognized in compliance with the ASC 606 framework provided by GAAP. There are five steps to determine the proper treatment of revenue:
+This application has been developed using Flask, backed by Azure's Postgres Flexible Server database and utilizes SQLAlchemy for ORM. To ensure scalability, flexibility, and ease of deployment, the application is containerized using Docker, creating an encapsulated environment for its components. Once the application's Docker image is built, it is then pushed to the Azure Container Registry, ensuring a centralized and secure repository for our container images. Deployment and orchestration are facilitated using Azure Kubernetes Service (AKS), enabling efficient scaling and management of the application instances in a cloud environment.****
+
+This application is designed for accountants to automate the revenue recognition process. In the world of accounting, revenue must be recognized in compliance with the ASC 606 framework provided by GAAP. There are five steps to determine the proper treatment of revenue:
 
         - Identify the customer contract
         - Identify the performance obligations
