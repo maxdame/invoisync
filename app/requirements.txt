@@ -1,9 +1,8 @@
-# To ensure app dependencies are ported from your virtual environment/host machine into your container, run 'pip freeze > requirements.txt' in the terminal to overwrite this file
-gunicorn==20.0.4
-alembic==1.6.5
-Faker==8.5.1
-Flask==2.0.1
-Flask-Migrate==3.0.1
-Flask-SQLAlchemy==2.5.1
-psycopg2-binary==2.9.6
-SQLAlchemy==1.4.17
+# gunicorn==20.0.4           # WSGI HTTP server for serving Python web applications in production
+alembic==1.6.5               # Database migration tool for SQLAlchemy
+Faker==8.5.1                 # Library for generating fake data (e.g., names, addresses, etc.)
+Flask==2.0.1                 # Micro web framework for building Python web applications
+Flask-Migrate==3.0.1         # Extension for Flask to handle SQLAlchemy database migrations using Alembic
+Flask-SQLAlchemy==2.5.1      # Extension for Flask to integrate with SQLAlchemy, a SQL toolkit and Object-Relational Mapping (ORM) library
+psycopg2-binary==2.9.6       # PostgreSQL adapter for Python, allows interaction between Python and PostgreSQL
+SQLAlchemy==1.4.17           # SQL toolkit and Object-Relational Mapping (ORM) library for Python
